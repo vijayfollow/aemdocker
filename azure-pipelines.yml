@@ -23,7 +23,7 @@ steps:
     globExpressions: '*jar'
     targetFolder: '$(Build.SourcesDirectory)/author-tar/resources'
 
-- script: cp $(Build.SourcesDirectory)/author-tar/resources/cq-author-4502.jar  $(Build.SourcesDirectory)/publish-tar/cq-publish-4503.jar
+- script: cp $(Build.SourcesDirectory)/author-tar/resources/cq-author-4502.jar  $(Build.SourcesDirectory)/publish-tar/resources/cq-publish-4503.jar
   displayName: 'Setting up Jars'
 
 - script: $(Build.SourcesDirectory)/makeLocalImages.sh
