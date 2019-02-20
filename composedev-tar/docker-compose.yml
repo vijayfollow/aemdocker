@@ -18,6 +18,6 @@ dispatcher:
     hostname: www.adobeatadobe.com
     image: aem_6-2_dispatcher 
     ports:
-        - "80:80"
+        - "8080:80"
     links:
         - publish
