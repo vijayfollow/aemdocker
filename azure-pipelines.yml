@@ -28,3 +28,33 @@ steps:
 
 - script: $(Build.SourcesDirectory)/makeLocalImages.sh
   displayName: 'docker build'
+
+- task: AmazonWebServices.aws-vsts-tools.ECRPushImage.ECRPushImage@1
+  displayName: 'Push Image: '
+  inputs:
+    awsCredentials: 'viji-aws'
+    regionName: 'us-east-1'
+    sourceImageName: 'aem_6-2_author'
+    repositoryName: 'aem_6-2_author'
+    pushTag: 'latest'
+    autoCreateRepository: true
+
+- task: AmazonWebServices.aws-vsts-tools.ECRPushImage.ECRPushImage@1
+  displayName: 'Push Image: '
+  inputs:
+    awsCredentials: 'viji-aws'
+    regionName: 'us-east-1'
+    sourceImageName: 'aem_6-2_publish'
+    repositoryName: 'aem_6-2_publish'
+    pushTag: 'latest'
+    autoCreateRepository: true
+
+- task: AmazonWebServices.aws-vsts-tools.ECRPushImage.ECRPushImage@1
+  displayName: 'Push Image: '
+  inputs:
+    awsCredentials: 'viji-aws'
+    regionName: 'us-east-1'
+    sourceImageName: 'aem_6-2_dispatcher'
+    repositoryName: 'aem_6-2_dispatcher'
+    pushTag: 'latest'
+    autoCreateRepository: true
