@@ -26,5 +26,5 @@ steps:
 - script: cp $(Build.SourcesDirectory)/author-tar/resources/*.jar  $(Build.SourcesDirectory)/publish-tar/
   displayName: 'Setting up Jars'
 
-- script: docker-compose build
+- script: $(Build.SourcesDirectory)/makeLocalImages.sh
   displayName: 'docker build'
