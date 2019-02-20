@@ -1,0 +1,25 @@
+# Docker image
+# Build a Docker image to deploy, run, or push to a container registry.
+# Add steps that use Docker Compose, tag images, push to a registry, run an image, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+- master
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+variables:
+  imageName: 'your-container-image-name:$(build.buildId)'
+
+steps:
+
+- task: AmazonWebServices.aws-vsts-tools.S3Download.S3Download@1
+  displayName: 'S3 Download: aemviji'
+  inputs:
+    awsCredentials: 'viji-aws'
+    regionName: 'us-east-1'
+    bucketName: aemviji
+    globExpressions: '*jar'
+    targetFolder: '$(Build.SourcesDirectory)/author-tar/resources'
+
