@@ -1,7 +1,0 @@
-$ cat .gitignore
-# exclude
-*.jar
-license.properties
-.DS_Store
-*/resources/packages/
-*.swp
