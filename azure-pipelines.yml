@@ -26,7 +26,7 @@ steps:
 - script: cp $(Build.SourcesDirectory)/author-tar/resources/cq-author-4502.jar  $(Build.SourcesDirectory)/publish-tar/resources/cq-publish-4503.jar
   displayName: 'Setting up Jars'
 
-- script: chmod +x $(Build.SourcesDirectory)/makeLocalImages.sh
+- script: $(Build.SourcesDirectory)/makeLocalImages.sh
   displayName: 'docker build'
 
 - task: AmazonWebServices.aws-vsts-tools.ECRPushImage.ECRPushImage@1
