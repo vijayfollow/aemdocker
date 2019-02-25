@@ -28,7 +28,7 @@ steps:
 
 - task: bash@3
   inputs:
-    - bash: chmod +x $(Build.SourcesDirectory)/makeLocalImages.sh
+    - bash: chmod +x makeLocalImages.sh
       workingDirectory: $(Build.SourcesDirectory)
       displayName: 'Bash Run'
       failOnStderr: false
