@@ -36,7 +36,7 @@ steps:
     regionName: 'us-east-1'
     sourceImageName: 'aem_6-2_author'
     repositoryName: 'aem_6-2_author'
-    pushTag: 'latest'
+    pushTag: $(build.buildId)
     autoCreateRepository: true
 
 - task: AmazonWebServices.aws-vsts-tools.ECRPushImage.ECRPushImage@1
